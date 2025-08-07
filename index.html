@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnapFox Factory Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="brand">
+        <div class="logo">
+          <!-- External SVG Logo -->
+          <img
+            src="asset/icons/Logo.svg"
+            alt="SnapFox Logo"
+            width="36"
+            height="45"
+          />
+        </div>
+        <h2>SnapFox Factory</h2>
+      </div>
+      <ul>
+        <li>
+          <img src="asset/icons/Home Page.png" alt="Dashboard Icon" />Dashboard
+        </li>
+        <li>
+          <img src="asset/icons/Shopping Cart.png" alt="Dashboard Icon" />Orders
+        </li>
+        <li><img src="asset/icons/Print.png" alt="Dashboard Icon" />Print</li>
+        <li><img src="asset/icons/Cut.png" alt="Dashboard Icon" />Cut</li>
+        <li><img src="asset/icons/Hand.png" alt="Dashboard Icon" />Pick</li>
+        <li><img src="asset/icons/Cube.png" alt="Dashboard Icon" />Mock-up</li>
+        <li>
+          <img src="asset/icons/Truck.png" alt="Dashboard Icon" />Pack & Ship
+        </li>
+        <li>
+          <img src="asset/icons/Warehouse.png" alt="Dashboard Icon" />Inventory
+        </li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="header">
+        <h1>DASHBOARD</h1>
+        <div>A Nguyen <small>Manager</small></div>
+      </div>
+
+      <div class="status-cards" id="statusCardsContainer"></div>
+
+      <div class="charts">
+        <div class="chart-box">
+          <div class="chart-title">Total Order</div>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-box total-items-box">
+          <div class="chart-title">Total Items</div>
+          <div class="total-items-container">
+            <canvas id="pieChart"></canvas>
+            <div class="item-list" id="itemList"></div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Production Time</div>
+          <canvas id="lineChart1"></canvas>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Tracking Active Time</div>
+          <canvas id="lineChart2"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="asset/js/script.js"></script>
+  </body>
+</html>
