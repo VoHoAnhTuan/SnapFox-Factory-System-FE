@@ -46,7 +46,7 @@ const orderTableBody = document.getElementById('orderTableBody');
 async function fetchOrders() {
   try {
     // Replace this with your real API endpoint
-    const response = await fetch('https://mocki.io/v1/3c875504-cc72-44f5-bd33-f4e83d835f5c');
+    const response = await fetch('https://mocki.io/v1/30e2646f-be6d-4520-a574-32b4b90b89f7');
     const orders = await response.json();
 
     renderOrderRows(orders);
@@ -108,31 +108,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Image Modal
 function showImageModal(orderCode) {
-  // TODO: Replace this with actual API call if needed
-  fetch(`https://mocki.io/v1/25bff5df-e596-4928-86c3-8fa54303cd98`)
+  // fetch(`https://mocki.io/v1/f2b9cb8f-b72e-45c7-83f5-632de2b06671/${orderCode}}`)
+  fetch(`https://mocki.io/v1/17e1c771-5ff4-465c-856e-2f242cb54f25`)
     .then(res => res.json())
     .then(data => {
+      if (!data || typeof data !== 'object') {
+        document.getElementById("imageModalTableBody").innerHTML = `
+          <tr><td colspan="10" style="text-align:center;">No image detail available</td></tr>
+        `;
+        document.getElementById("imageModal").style.display = "block";
+        return;
+      }
+
+      const safeImg = (src, label) => {
+        return src
+          ? `<img src="${src}" alt="${label}" />`
+          : `<div class="empty-cell"></div>`;
+      };
+
+      const safeText = (text) => {
+        return text && text !== "null" ? text : "";
+      };
+
+      const sizes = data.sizes || {};
+
+      const sizeHTML = `
+        ${safeText(sizes.front) ? `Front: ${sizes.front}<br/>` : ""}
+        ${safeText(sizes.back) ? `Back: ${sizes.back}<br/>` : ""}
+        ${safeText(sizes.left) ? `Left: ${sizes.left}<br/>` : ""}
+        ${safeText(sizes.right) ? `Right: ${sizes.right}<br/>` : ""}
+        ${safeText(sizes.neck) ? `Neck: ${sizes.neck}` : ""}
+      `;
+
+      const downloadHTML = data.downloadUrl
+        ? `<a href="${data.downloadUrl}" download>Download</a>`
+        : `<div class="empty-cell"></div>`;
+
       const row = `
         <tr>
-          <td><img src="${data.frontImg}" alt="Front" /></td>
-          <td><img src="${data.backImg}" alt="Back" /></td>
-          <td><img src="${data.frontMockup}" alt="Front Mockup" /></td>
-          <td><img src="${data.backMockup}" alt="Back Mockup" /></td>
-          <td><img src="${data.leftImg}" alt="Left" /></td>
-          <td><img src="${data.rightImg}" alt="Right" /></td>
-          <td><img src="${data.neckImg}" alt="Neck" /></td>
-          <td><img src="${data.mockup}" alt="Mockup" /></td>
-          <td>
-            Front: ${data.sizes.front} <br/>
-            Back: ${data.sizes.back} <br/>
-            Left: ${data.sizes.left} <br/>
-            Right: ${data.sizes.right} <br/>
-            Neck: ${data.sizes.neck}
-          </td>
-          <td><a href="${data.downloadUrl}" download>Download</a></td>
+          <td>${safeImg(data.frontImg, "Front")}</td>
+          <td>${safeImg(data.backImg, "Back")}</td>
+          <td>${safeImg(data.frontMockup, "Front Mockup")}</td>
+          <td>${safeImg(data.backMockup, "Back Mockup")}</td>
+          <td>${safeImg(data.leftImg, "Left")}</td>
+          <td>${safeImg(data.rightImg, "Right")}</td>
+          <td>${safeImg(data.neckImg, "Neck")}</td>
+          <td>${safeImg(data.mockup, "Mockup")}</td>
+          <td>${sizeHTML}</td>
+          <td>${downloadHTML}</td>
         </tr>
       `;
+
       document.getElementById("imageModalTableBody").innerHTML = row;
+      document.getElementById("imageModal").style.display = "block";
+    })
+    .catch(err => {
+      console.error("Modal fetch error:", err);
+      document.getElementById("imageModalTableBody").innerHTML = `
+        <tr><td colspan="10" style="text-align:center;">Failed to load image detail</td></tr>
+      `;
       document.getElementById("imageModal").style.display = "block";
     });
 }

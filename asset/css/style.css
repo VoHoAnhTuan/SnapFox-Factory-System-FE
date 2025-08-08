@@ -423,6 +423,13 @@ canvas {
   border-radius: 4px;
 }
 
+.empty-cell {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
 
 
 
