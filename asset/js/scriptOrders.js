@@ -77,7 +77,8 @@ function renderOrderRows(data) {
       <td><span class="badge badge-${order.factoryStatus.toLowerCase()}">${order.factoryStatus}</span></td>
       <td>${order.trackingNumber}</td>
       <td>${order.createdDate}</td>
-      <td><button class="btn-detail">Detail</button></td>
+      <td><button class="btn-detail" data-order-code="${order.orderCode}">Detail</button></td>
+
     `;
 
     orderTableBody.appendChild(row);
@@ -104,3 +105,69 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Image Modal
+function showImageModal(orderCode) {
+  // TODO: Replace this with actual API call if needed
+  fetch(`https://mocki.io/v1/25bff5df-e596-4928-86c3-8fa54303cd98`)
+    .then(res => res.json())
+    .then(data => {
+      const row = `
+        <tr>
+          <td><img src="${data.frontImg}" alt="Front" /></td>
+          <td><img src="${data.backImg}" alt="Back" /></td>
+          <td><img src="${data.frontMockup}" alt="Front Mockup" /></td>
+          <td><img src="${data.backMockup}" alt="Back Mockup" /></td>
+          <td><img src="${data.leftImg}" alt="Left" /></td>
+          <td><img src="${data.rightImg}" alt="Right" /></td>
+          <td><img src="${data.neckImg}" alt="Neck" /></td>
+          <td><img src="${data.mockup}" alt="Mockup" /></td>
+          <td>
+            Front: ${data.sizes.front} <br/>
+            Back: ${data.sizes.back} <br/>
+            Left: ${data.sizes.left} <br/>
+            Right: ${data.sizes.right} <br/>
+            Neck: ${data.sizes.neck}
+          </td>
+          <td><a href="${data.downloadUrl}" download>Download</a></td>
+        </tr>
+      `;
+      document.getElementById("imageModalTableBody").innerHTML = row;
+      document.getElementById("imageModal").style.display = "block";
+    });
+}
+
+function closeImageModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-detail")) {
+    const orderCode = e.target.dataset.orderCode;
+    showImageModal(orderCode);
+  }
+});
+
+//Close modal if outside
+function closeModalOnOutsideClick(modalId) {
+  const modal = document.getElementById(modalId);
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+closeModalOnOutsideClick("imageModal");
+
+//Close modal if click Escape
+window.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    document.getElementById("imageModal").style.display = "none";
+  }
+});
+
+
+
+
+
