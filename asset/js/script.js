@@ -109,7 +109,7 @@ function renderItemList(data) {
   });
 }
 
-async function fetchItemsFromBackend() {
+async function fetchItems() {
   try {
     const res = await fetch('https://mocki.io/v1/0f8f9f88-b4ca-4075-a98d-5a713ee7c219'); // replace real API later
     const data = await res.json();
@@ -121,10 +121,10 @@ async function fetchItemsFromBackend() {
 }
 
 // Call initially
-fetchItemsFromBackend();
+fetchItems();
 
 // Optionally: refresh every X seconds
-setInterval(fetchItemsFromBackend, 60000); // every 60s
+setInterval(fetchItems, 60000); // every 60s
 
 // Status card
 document.addEventListener("DOMContentLoaded", () => {

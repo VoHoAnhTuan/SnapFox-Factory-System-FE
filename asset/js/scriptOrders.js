@@ -70,6 +70,7 @@ function renderOrderRows(data) {
       <td>${order.customerName}<br /><small>${order.customerAddress}</small></td>
       <td>${order.variant}</td>
       <td>${order.quantity}</td>
+      <td>${order.printType}</td>
       <td>${order.shippingMethod}</td>
       <td>${order.productionLine}</td>
       <td><span class="badge film-status-${order.filmStatus.toLowerCase()}">${order.filmStatus}</td>

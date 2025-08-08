@@ -341,4 +341,9 @@ canvas {
   cursor: pointe
 }
 
+/* User Profile */
+.user {
+  display: flex;
+  gap: 10px;
+}
 
