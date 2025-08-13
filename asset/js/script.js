@@ -74,9 +74,8 @@ function renderLineChart2({ labels, values }) {
   });
 }
 
-// Initial call
 fetchChartData();
-setInterval(fetchChartData, 60000); // every 60s
+// setInterval(fetchChartData, 60000); // every 60s
 
 
 const itemList = document.getElementById('itemList');
@@ -120,11 +119,9 @@ async function fetchItems() {
   }
 }
 
-// Call initially
 fetchItems();
 
-// Optionally: refresh every X seconds
-setInterval(fetchItems, 60000); // every 60s
+// setInterval(fetchItems, 60000); // every 60s
 
 // Status card
 document.addEventListener("DOMContentLoaded", () => {

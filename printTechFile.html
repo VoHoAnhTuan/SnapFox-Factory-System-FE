@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SnapFox Orders</title>
+    <title>SnapFox Print Tech</title>
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
+    
     <link rel="stylesheet" href="asset/css/style.css" />
   </head>
   <body>
@@ -48,9 +48,9 @@
 
     <div class="main">
       <div class="header">
-        <h1>ORDERS</h1>
+        <h1>PRINT TECH</h1>
         <div class="user">
-          <div class="user-info">Peter Truong<br /><small>Manager</small></div>
+          <div class="user-info">Peter Truong<br /><small>Team File</small></div>
           <img
             src="asset/icons/user.png"
             alt="Profile Icon"
@@ -73,49 +73,26 @@
           </select>
         </div>
 
-        <!-- Film Status Filter -->
+        <!-- Uploaded File Status Filter -->
         <div class="select-wrapper">
-          <label for="filmStatus">Film Status:</label>
-          <select id="filmStatus" name="filmStatus">
+          <label for="uploadedFileStatus">Uploaded File Status:</label>
+          <select id="uploadedFileStatus" name="uploadedFileStatus">
+            <option value="success">Success</option>
+            <option value="fail">Fail</option>  
+        </select>
+        </div>
+
+        <!-- File Status Filter -->
+        <div class="select-wrapper">
+          <label for="fileStatus">File Status:</label>
+          <select id="fileStatus" name="fileStatus">
             <option value="downloaded">Downloaded</option>
             <option value="downloading">Downloading</option>
             <option value="notYet">Not Yet</option>
           </select>
-        </div>
-
-        <!-- Factory Status Filter -->
-        <div class="select-wrapper">
-          <label for="factoryStatus">Factory Status:</label>
-          <select id="factoryStatus" name="factoryStatus">
-            <option value="received">Received</option>
-            <option value="producing">Producing</option>
-            <option value="finished">Finished</option>
           </select>
         </div>
-
-        <!-- Product Type Filter -->
-        <div class="select-wrapper">
-          <label for="productType">Product Type:</label>
-          <select id="productType" name="productType">
-            <option value="g05000">G05000</option>
-            <option value="g06000">G06000</option>
-            <option value="g07000">G07000</option>
-          </select>
         </div>
-
-        <!-- Size Filter -->
-        <div class="select-wrapper">
-          <label for="size">Size:</label>
-          <select id="size" name="size">
-            <option value="xs">XS</option>
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
-            <option value="xxl">XXL</option>
-          </select>
-        </div>
-      </div>
 
       <div class="top-bar">
         <div class="page-size-dropdown">
@@ -130,8 +107,8 @@
 
         <div class="download-container">
           <button class="download-btn">
-            <img src="asset/icons/download.png" alt="Download Icon" />
-            Download File
+            <img src="asset/icons/upload.png" alt="Upload Icon" />
+            Upload File
           </button>
         </div>
       </div>
@@ -140,54 +117,19 @@
         <thead>
           <tr>
             <th><input type="checkbox" id="selectAll" /></th>
-            <th>Seller ID</th>
-            <th>Seller Order ID</th>
-            <th>Order Code</th>
-            <th>Customer Info</th>
-            <th>Variant</th>
-            <th>Qty</th>
-            <th>Print Type</th>
-            <th>Shipping Method</th>
-            <th>Production Line</th>
-            <th>Film Status</th>
-            <th>Factory Status</th>
-            <th>Tracking No.</th>
-            <th>Created Date</th>
-            <th>Action</th>
+            <th>Created Time</th>
+            <th>File Name</th>
+            <th>File Upload</th>
+            <th>Users</th>
+            <th>File Amount</th>
           </tr>
         </thead>
-        <tbody id="orderTableBody">
+        <tbody id="printTechTableBody">
           <!-- Rows will be inserted here -->
         </tbody>
       </table>
-
-      <!-- Detail Image Modal -->
-      <div id="imageModal" class="modal">
-        <div class="modal-content wide">
-          <span class="close-btn" onclick="closeImageModal()">&times;</span>
-          <table class="image-detail-table">
-            <thead>
-              <tr>
-                <th>Front</th>
-                <th>Back</th>
-                <th>Front Mockup</th>
-                <th>Back Mockup</th>
-                <th>Left</th>
-                <th>Right</th>
-                <th>Neck/Special</th>
-                <th>Mockup</th>
-                <th>Image Size</th>
-                <th>File Download</th>
-              </tr>
-            </thead>
-            <tbody id="imageModalTableBody">
-              <!-- Dynamic content -->
-            </tbody>
-          </table>
-        </div>
-      </div>
     </div>
 
-    <script src="asset/js/scriptOrders.js" defer></script>
+    <script src="asset/js/scriptPrintTechFile.js" defer></script>
   </body>
 </html>

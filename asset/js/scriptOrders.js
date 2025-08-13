@@ -78,7 +78,6 @@ function renderOrderRows(data) {
       <td>${order.trackingNumber}</td>
       <td>${order.createdDate}</td>
       <td><button class="btn-detail" data-order-code="${order.orderCode}">Detail</button></td>
-
     `;
 
     orderTableBody.appendChild(row);
