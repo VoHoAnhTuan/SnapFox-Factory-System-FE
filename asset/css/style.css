@@ -234,7 +234,7 @@ canvas {
 
 
 /* Download btn */
-.download-container {
+.btn-container {
   display: flex;
   flex-shrink: 0;
   justify-content: flex-end;
@@ -348,6 +348,10 @@ canvas {
   cursor: pointer;
 }
 
+.btn-detail:hover {
+  background-color: #1f2944;
+}
+
 /* Image Modal */
 .modal-content.wide {
   width: 95%;
@@ -451,6 +455,32 @@ canvas {
   border-radius: 40px;
   padding: 40px;
 }
+
+/* PRINT TECH */
+.btn-upload {
+  padding: 6px 12px;
+  background-color: #2e3b5f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-upload:hover {
+  background-color: #1f2944;
+}
+
+#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: fit-content;
+}
+#uploadCell {
+  max-width: 10em;
+}
+
 
 
 
