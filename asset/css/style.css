@@ -441,6 +441,7 @@ canvas {
   background-image: url('../icons/background.jpg');
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
 }
 .login-panel {
   display: flex;

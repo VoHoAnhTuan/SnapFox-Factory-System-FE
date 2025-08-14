@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// upload file
 document.getElementById("uploadForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -72,12 +73,12 @@ document.getElementById("uploadForm").addEventListener("submit", function (e) {
   }
 
   const formData = new FormData();
-  formData.append("file", file); // The name here must match your server's expected field
+  formData.append("file", file); // "file" must be server's expected field
 
   fetch("https://your-api-endpoint.com/upload", {
     method: "POST",
     body: formData,
-    // No need to set Content-Type; fetch will do it with boundary
+
   })
     .then((response) => {
       if (!response.ok) throw new Error("Upload failed");
