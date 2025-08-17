@@ -555,3 +555,40 @@ canvas {
 #unlockBtn {
   background-color: #21d365d0;
 }
+
+/* Mock-up */
+#barCode {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: auto;
+  max-width: 450px;
+  max-height: 350px;
+}
+
+.holdPassbtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 4em 0;
+}
+
+#holdBtn {
+  width: 20%;
+  background-color: #ff0004d0;
+  font-weight: 800;
+}
+
+#holdBtn:hover {
+  background-color: #cc0004d0;
+}
+
+#passBtn {
+  width: 20%;
+  background-color: rgb(93, 137, 208);
+  font-weight: 800;
+}
+
+#passBtn:hover {
+  background-color:  rgb(73, 107, 163);
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnapFox Print Tech</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Native CSS -->
+    <link rel="stylesheet" href="asset/css/style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="brand">
+        <div class="logo">
+          <!-- External SVG Logo -->
+          <img
+            src="asset/icons/Logo.svg"
+            alt="SnapFox Logo"
+            width="36"
+            height="45"
+          />
+        </div>
+        <h2>SnapFox Factory</h2>
+      </div>
+      <ul>
+        <li>
+          <img src="asset/icons/Home Page.png" alt="Dashboard Icon" />Dashboard
+        </li>
+        <li>
+          <img src="asset/icons/Shopping Cart.png" alt="Shopping Icon" />Orders
+        </li>
+        <li><img src="asset/icons/Print.png" alt="Print Icon" />Print</li>
+        <li><img src="asset/icons/Cut.png" alt="Cut Icon" />Cut</li>
+        <li><img src="asset/icons/Hand.png" alt="Hand Icon" />Pick</li>
+        <li><img src="asset/icons/Cube.png" alt="Cube Icon" />Mock-up</li>
+        <li><img src="asset/icons/Truck.png" alt="Truck Icon" />Pack & Ship</li>
+        <li>
+          <img src="asset/icons/Warehouse.png" alt="Warehouse Icon" />Inventory
+        </li>
+      </ul>
+    </div>
+
+    <div class="main">
+      <div class="header">
+        <h1>MOCK-UP</h1>
+        <div class="user">
+          <div class="user-info">Peter Truong<br /><small>Team File</small></div>
+          <img
+            src="asset/icons/user.png"
+            alt="Profile Icon"
+            width="40"
+            height="40"
+          />
+        </div>
+      </div>
+
+      <img id="barCode" src="asset/icons/barCodesample.jpg" alt="">
+
+      <table class="order-table" id="mockupTable-first">
+        <thead>
+          <tr>
+            <th>Order Code</th>
+            <th>Seller Order ID</th>
+            <th>Customer Information</th>
+            <th>Total Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="mockupTable-first-body">
+          <!-- Rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <table class="order-table" id="mockupTable-second">
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Variant</th>
+            <th>Font</th>
+            <th>Back</th>
+            <th>Right</th>
+            <th>Left</th>
+            <th>Neck</th>
+            <th>Mockup</th>
+          </tr>
+        </thead>
+        <tbody id="mockupTable-second-body">
+          <!-- Rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <div class="holdPassbtn">
+          <button id="holdBtn" class="btn">Hold</button>
+          <button id="passBtn" class="btn">Pass</button>
+      </div>
+
+      <div style="text-align: end;">
+          <button class="btn" style="text-align: end;" onclick="scrollToTop()">⬆ Back to Top</button>
+      </div>
+    </div>
+
+    
+
+
+
+    <script src="asset/js/mockUp.js" defer></script>
+  </body>
+</html>
