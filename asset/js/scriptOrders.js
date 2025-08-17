@@ -77,7 +77,7 @@ function renderOrderRows(data) {
       <td><span class="badge badge-${order.factoryStatus.toLowerCase()}">${order.factoryStatus}</span></td>
       <td>${order.trackingNumber}</td>
       <td>${order.createdDate}</td>
-      <td><button class="btn-detail" data-order-code="${order.orderCode}">Detail</button></td>
+      <td><button class="btn" data-order-code="${order.orderCode}">Detail</button></td>
     `;
 
     orderTableBody.appendChild(row);
@@ -175,7 +175,7 @@ function closeImageModal() {
 }
 
 document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("btn-detail")) {
+  if (e.target.classList.contains("btn")) {
     const orderCode = e.target.dataset.orderCode;
     showImageModal(orderCode);
   }
