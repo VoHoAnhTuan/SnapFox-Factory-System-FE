@@ -32,15 +32,32 @@ function renderPieChart({ labels, values }) {
   new Chart(document.getElementById('pieChart').getContext('2d'), {
     type: 'doughnut',
     data: {
-      labels: labels,
+      labels,
       datasets: [{
         data: values,
         backgroundColor: ['#74a947', '#dadadaff']
       }]
     },
-    options: { responsive: true }
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,   // let CSS control canvas size
+      cutout: '60%',                // hole size (tweak for ring thickness)
+      radius: '90%',                // outer radius within the canvas
+      plugins: {
+        legend: {
+          position: 'right',        // labels on the right
+          align: 'center',
+          labels: {
+            font: { size: 12 },     // legend text size
+            boxWidth: 14,           // color box size
+            padding: 4           // space between legend items
+          }
+        }
+      },
+    }
   });
 }
+
 
 function renderLineChart1({ labels, values }) {
   new Chart(document.getElementById('lineChart1').getContext('2d'), {
@@ -77,52 +94,6 @@ function renderLineChart2({ labels, values }) {
 fetchChartData();
 // setInterval(fetchChartData, 60000); // every 60s
 
-
-const itemList = document.getElementById('itemList');
-// Item list pieChart
-let items = [];
-
-function renderItemList(data) {
-  itemList.innerHTML = '';
-
-  data.forEach(item => {
-    const div = document.createElement('div');
-
-    const img = document.createElement('img');
-    img.src = "https://img.icons8.com/ios-filled/50/000000/t-shirt.png";
-    img.alt = "shirt icon";
-
-    const nameSpan = document.createElement('span');
-    nameSpan.textContent = item.name;
-    nameSpan.style.flex = '1';
-
-    const name = document.createTextNode(`${item.name} `);
-    const qty = document.createElement('strong');
-    qty.textContent = item.qty;
-
-    div.appendChild(img);
-    div.appendChild(nameSpan);
-    div.appendChild(qty);
-
-    itemList.appendChild(div);
-  });
-}
-
-async function fetchItems() {
-  try {
-    const res = await fetch('https://mocki.io/v1/0f8f9f88-b4ca-4075-a98d-5a713ee7c219'); // replace real API later
-    const data = await res.json();
-    items = data;
-    renderItemList(items);
-  } catch (err) {
-    console.error('Failed to fetch items', err);
-  }
-}
-
-fetchItems();
-
-// setInterval(fetchItems, 60000); // every 60s
-
 // Status card
 document.addEventListener("DOMContentLoaded", () => {
   const statusContainer = document.getElementById("statusCardsContainer");
@@ -149,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hold: { label: "Hold Off", class: "hold" }
     };
 
+    statusContainer.className = `row row-cols-12 gx-3 gy-3 mb-3`;
     statusContainer.innerHTML = "";
 
     for (const key in statusMap) {
@@ -156,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const count = statusCounts[key] ?? 0;
 
       const card = document.createElement("div");
-      card.className = `status-card ${statusClass}`;
+      card.className = `status-card ${statusClass} col-sm-12 col-lg-auto`;
       card.innerHTML = `${label}<br/>${count}`;
 
       statusContainer.appendChild(card);
