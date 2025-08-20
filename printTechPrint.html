@@ -19,50 +19,87 @@
     <link rel="stylesheet" href="asset/css/style.css" />
   </head>
   <body>
-    <div class="sidebar">
-      <div class="brand">
-        <div class="logo">
-          <!-- External SVG Logo -->
-          <img
-            src="asset/icons/Logo.svg"
-            alt="SnapFox Logo"
-            width="36"
-            height="45"
-          />
-        </div>
-        <h2>SnapFox Factory</h2>
-      </div>
-      <ul>
-        <li>
-          <img src="asset/icons/Home Page.png" alt="Dashboard Icon" />Dashboard
-        </li>
-        <li>
-          <img src="asset/icons/Shopping Cart.png" alt="Shopping Icon" />Orders
-        </li>
-        <li><img src="asset/icons/Print.png" alt="Print Icon" />Print</li>
-        <li><img src="asset/icons/Cut.png" alt="Cut Icon" />Cut</li>
-        <li><img src="asset/icons/Hand.png" alt="Hand Icon" />Pick</li>
-        <li><img src="asset/icons/Cube.png" alt="Cube Icon" />Mock-up</li>
-        <li><img src="asset/icons/Truck.png" alt="Truck Icon" />Pack & Ship</li>
-        <li>
-          <img src="asset/icons/Warehouse.png" alt="Warehouse Icon" />Inventory
-        </li>
-      </ul>
-    </div>
+     <!-- Page wrapper -->
+    <div id="wrapper" class="d-flex flex-row flex-grow-1">
 
-    <div class="main">
-      <div class="header">
-        <h1>PRINT TECH</h1>
-        <div class="user">
-          <div class="user-info">Peter Truong<br /><small>Team File</small></div>
-          <img
-            src="asset/icons/user.png"
-            alt="Profile Icon"
-            width="40"
-            height="40"
-          />
+      <!-- Sidebar -->
+      <nav class="sidebar d-flex flex-column flex-shrink-0">
+        <!-- <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-circle-left"></i>
+        </button> -->
+        
+
+        <ul class="navbar-nav flex-column">
+          <!-- Navbar brand -->
+          <a
+            class="navbar-brand d-flex align-items-center justify-content-center"
+            href="index.html"
+          >
+            
+              <img src="asset/icons/Logo.svg" alt="" />
+            
+            <div class="logo mx-3">SnapFox Factory</div>
+          </a>
+
+          <a href="#" class="sidebar-link active text-decoration-none p-3 mt-3">
+                <i class="fas fa-home me-3"></i>
+                <span class="hide-on-collapse">Dashboard</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-cart-shopping me-3"></i>
+                <span class="hide-on-collapse">Orders</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-print me-3"></i>
+                <span class="hide-on-collapse">Print</span>
+            </a>
+
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-scissors me-3"></i>
+                <span class="hide-on-collapse">Cut</span>
+            </a>
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-hand me-3"></i>
+                <span class="hide-on-collapse">Pick</span>
+            </a>
+            
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-cube me-3"></i>
+                <span class="hide-on-collapse">Mock-up</span>
+            </a>
+
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-shipping-fast me-3"></i>
+                <span class="hide-on-collapse">Pack & Ship</span>
+            </a>
+
+            <a href="#" class="sidebar-link text-decoration-none p-3">
+                <i class="fas fa-warehouse me-3"></i>
+                <span class="hide-on-collapse">Inventory</span>
+            </a>
+          
+        </ul>
+      </nav>
+
+    <main class="main">
+        <!-- User profile -->
+        <div class="header">
+          <h1>PRINT TECH</h1>
+
+          <!-- User information -->
+          <div class="user row row-cols-auto">
+            <div class="user-info">
+              <div class="user-name">Peter Truong</div>
+              <div><small>Manager</small></div>
+            </div>
+            <img
+              src="asset/icons/user.png"
+              alt="Profile Icon"
+              width="40"
+              height="40"
+            />
+          </div>
         </div>
-      </div>
 
       <div class="filter-group">
         <!-- Created Date Filter -->
@@ -137,6 +174,7 @@
           <!-- Rows will be inserted here -->
         </tbody>
       </table>
+    </main>
     </div>
 
     <script src="asset/js/scriptPrintTechPrint.js" defer></script>

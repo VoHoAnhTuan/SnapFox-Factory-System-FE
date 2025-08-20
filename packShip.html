@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SnapFox Print Tech</title>
+    <title>SnapFox Pack & Ship</title>
+
+    <!-- Font awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap v5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,104 +28,149 @@
     />
 
     <!-- Native CSS -->
-    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="/asset/css/style.css" />
   </head>
+
   <body>
-    <div class="sidebar">
-      <div class="brand">
-        <div class="logo">
-          <!-- External SVG Logo -->
-          <img
-            src="asset/icons/Logo.svg"
-            alt="SnapFox Logo"
-            width="36"
-            height="45"
-          />
-        </div>
-        <h2>SnapFox Factory</h2>
-      </div>
-      <ul>
-        <li>
-          <img src="asset/icons/Home Page.png" alt="Dashboard Icon" />Dashboard
-        </li>
-        <li>
-          <img src="asset/icons/Shopping Cart.png" alt="Shopping Icon" />Orders
-        </li>
-        <li><img src="asset/icons/Print.png" alt="Print Icon" />Print</li>
-        <li><img src="asset/icons/Cut.png" alt="Cut Icon" />Cut</li>
-        <li><img src="asset/icons/Hand.png" alt="Hand Icon" />Pick</li>
-        <li><img src="asset/icons/Cube.png" alt="Cube Icon" />Mock-up</li>
-        <li><img src="asset/icons/Truck.png" alt="Truck Icon" />Pack & Ship</li>
-        <li>
-          <img src="asset/icons/Warehouse.png" alt="Warehouse Icon" />Inventory
-        </li>
-      </ul>
-    </div>
+    <!-- Page wrapper -->
+    <div id="wrapper" class="d-flex flex-row flex-grow-1">
+      <!-- Sidebar -->
+      <nav class="sidebar d-flex flex-column flex-shrink-0">
+        <!-- <button class="toggle-btn" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-circle-left"></i>
+        </button> -->
 
-    <div class="main">
-      <div class="header">
-        <h1>PACK & SHIP</h1>
-        <div class="user">
-          <div class="user-info">
-            Peter Truong<br /><small>Team File</small>
+        <ul class="navbar-nav flex-column">
+          <!-- Navbar brand -->
+          <a
+            class="navbar-brand d-flex align-items-center justify-content-center"
+            href="index.html"
+          >
+            <img src="asset/icons/Logo.svg" alt="" />
+
+            <div class="logo mx-3">SnapFox Factory</div>
+          </a>
+
+          <a href="#" class="sidebar-link active text-decoration-none p-3 mt-3">
+            <i class="fas fa-home me-3"></i>
+            <span class="hide-on-collapse">Dashboard</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-cart-shopping me-3"></i>
+            <span class="hide-on-collapse">Orders</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-print me-3"></i>
+            <span class="hide-on-collapse">Print</span>
+          </a>
+
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-scissors me-3"></i>
+            <span class="hide-on-collapse">Cut</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-hand me-3"></i>
+            <span class="hide-on-collapse">Pick</span>
+          </a>
+
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-cube me-3"></i>
+            <span class="hide-on-collapse">Mock-up</span>
+          </a>
+
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-shipping-fast me-3"></i>
+            <span class="hide-on-collapse">Pack & Ship</span>
+          </a>
+
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-warehouse me-3"></i>
+            <span class="hide-on-collapse">Inventory</span>
+          </a>
+        </ul>
+      </nav>
+
+      <main class="main">
+                <!-- User profile -->
+        <div class="header">
+          <h1>PACK & SHIP</h1>
+
+          <!-- User information -->
+          <div class="user row row-cols-auto">
+            <div class="user-info">
+              <div class="user-name">Peter Truong</div>
+              <div><small>Manager</small></div>
+            </div>
+            <img
+              src="asset/icons/user.png"
+              alt="Profile Icon"
+              width="40"
+              height="40"
+            />
           </div>
-          <img
-            src="asset/icons/user.png"
-            alt="Profile Icon"
-            width="40"
-            height="40"
-          />
         </div>
-      </div>
 
-      <img id="barCode" src="asset/icons/barCodesample.jpg" alt="" />
+        <img id="barCode" src="asset/icons/barCodesample.jpg" alt="" />
 
-      <table class="order-table" id="mockupTable-first">
-        <thead>
-          <tr>
-            <th>Order Code</th>
-            <th>Seller Order ID</th>
-            <th>Customer Information</th>
-            <th>Total Quantity</th>
-            <th>Tracking Number</th>
-            <th>Label Link</th>
-          </tr>
-        </thead>
-        <tbody id="mockupTable-first-body">
-          <!-- Rows will be inserted here -->
-        </tbody>
-      </table>
+        <table class="order-table" id="mockupTable-first">
+          <thead>
+            <tr>
+              <th>Order Code</th>
+              <th>Seller Order ID</th>
+              <th>Customer Information</th>
+              <th>Total Quantity</th>
+              <th>Tracking Number</th>
+              <th>Label Link</th>
+            </tr>
+          </thead>
+          <tbody id="mockupTable-first-body">
+            <!-- Rows will be inserted here -->
+          </tbody>
+        </table>
 
-      <table class="order-table" id="mockupTable-second">
-        <thead>
-          <tr>
-            <th>Quantity</th>
-            <th>Variant</th>
-            <th>Font</th>
-            <th>Back</th>
-            <th>Right</th>
-            <th>Left</th>
-            <th>Neck</th>
-            <th>Mockup</th>
-          </tr>
-        </thead>
-        <tbody id="mockupTable-second-body">
-          <!-- Rows will be inserted here -->
-        </tbody>
-      </table>
+        <table class="order-table" id="mockupTable-second">
+          <thead>
+            <tr>
+              <th>Quantity</th>
+              <th>Variant</th>
+              <th>Font</th>
+              <th>Back</th>
+              <th>Right</th>
+              <th>Left</th>
+              <th>Neck</th>
+              <th>Mockup</th>
+            </tr>
+          </thead>
+          <tbody id="mockupTable-second-body">
+            <!-- Rows will be inserted here -->
+          </tbody>
+        </table>
 
-      <div class="holdPassbtn">
-        <button id="holdBtn" class="btn">Failed</button>
-        <button id="passBtn" class="btn">Finish</button>
-      </div>
+        <div class="holdPassbtn">
+          <button id="holdBtn" class="btn">Failed</button>
+          <button id="passBtn" class="btn">Finish</button>
+        </div>
 
-      <div style="text-align: end">
-        <button class="btn" style="text-align: end" onclick="scrollToTop()">
-          ⬆ Back to Top
-        </button>
-      </div>
+        <div style="text-align: end">
+          <button class="btn" style="text-align: end" onclick="scrollToTop()">
+            ⬆ Back to Top
+          </button>
+        </div>
+      </main>
     </div>
 
     <script src="asset/js/packShip.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

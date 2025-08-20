@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Font awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Bootstrap v5 -->
     <link
@@ -31,13 +34,12 @@
 
   <body>
     <!-- Page wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="d-flex flex-row flex-grow-1">
       <!-- Sidebar -->
       <nav class="sidebar d-flex flex-column flex-shrink-0">
         <!-- <button class="toggle-btn" onclick="toggleSidebar()">
             <i class="fas fa-chevron-circle-left"></i>
         </button> -->
-        
 
         <ul class="navbar-nav flex-column">
           <!-- Navbar brand -->
@@ -45,66 +47,59 @@
             class="navbar-brand d-flex align-items-center justify-content-center"
             href="index.html"
           >
-            
-              <img src="asset/icons/Logo.svg" alt="" />
-            
+            <img src="asset/icons/Logo.svg" alt="" />
+
             <div class="logo mx-3">SnapFox Factory</div>
           </a>
 
           <a href="#" class="sidebar-link active text-decoration-none p-3 mt-3">
-                <i class="fas fa-home me-3"></i>
-                <span class="hide-on-collapse">Dashboard</span>
-            </a>
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-cart-shopping me-3"></i>
-                <span class="hide-on-collapse">Orders</span>
-            </a>
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-print me-3"></i>
-                <span class="hide-on-collapse">Print</span>
-            </a>
+            <i class="fas fa-home me-3"></i>
+            <span class="hide-on-collapse">Dashboard</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-cart-shopping me-3"></i>
+            <span class="hide-on-collapse">Orders</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-print me-3"></i>
+            <span class="hide-on-collapse">Print</span>
+          </a>
 
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-scissors me-3"></i>
-                <span class="hide-on-collapse">Cut</span>
-            </a>
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-hand me-3"></i>
-                <span class="hide-on-collapse">Pick</span>
-            </a>
-            
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-cube me-3"></i>
-                <span class="hide-on-collapse">Mock-up</span>
-            </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-scissors me-3"></i>
+            <span class="hide-on-collapse">Cut</span>
+          </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-hand me-3"></i>
+            <span class="hide-on-collapse">Pick</span>
+          </a>
 
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-shipping-fast me-3"></i>
-                <span class="hide-on-collapse">Pack & Ship</span>
-            </a>
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-cube me-3"></i>
+            <span class="hide-on-collapse">Mock-up</span>
+          </a>
 
-            <a href="#" class="sidebar-link text-decoration-none p-3">
-                <i class="fas fa-warehouse me-3"></i>
-                <span class="hide-on-collapse">Inventory</span>
-            </a>
-          
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-shipping-fast me-3"></i>
+            <span class="hide-on-collapse">Pack & Ship</span>
+          </a>
+
+          <a href="#" class="sidebar-link text-decoration-none p-3">
+            <i class="fas fa-warehouse me-3"></i>
+            <span class="hide-on-collapse">Inventory</span>
+          </a>
         </ul>
-        </div>
       </nav>
 
       <main class="main">
-
         <!-- User profile -->
         <div class="header">
-
           <h1>DASHBOARD</h1>
 
           <!-- User information -->
           <div class="user row row-cols-auto">
             <div class="user-info">
-              <div class="user-name">
-                Peter Truong
-              </div>
+              <div class="user-name">Peter Truong</div>
               <div><small>Manager</small></div>
             </div>
             <img
@@ -117,25 +112,27 @@
         </div>
 
         <!-- Status cards -->
-           <div class="status-cards" id="statusCardsContainer"></div>
+        <div class="status-cards" id="statusCardsContainer"></div>
 
-        
-      
         <div class="chart row row-cols-auto gy-3 gx-3">
           <div class="col-lg-8 col-md-12">
             <div class="chart-box">
-              <div class="chart-title">Total Orders: <span id="totalOrders">999</span></div>
+              <div class="chart-title">
+                Total Orders: <span id="totalOrders">999</span>
+              </div>
               <canvas id="barChart"></canvas>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-12">
             <div class="chart-box total-items-box">
-              <div class="chart-title">Total Items: <span id="totalItems">3989</span></div>              
-                <canvas id="pieChart"></canvas>              
+              <div class="chart-title">
+                Total Items: <span id="totalItems">3989</span>
+              </div>
+              <canvas id="pieChart"></canvas>
             </div>
           </div>
-          
+
           <div class="col-lg-6 col-md-12">
             <div class="chart-box">
               <div class="chart-title">Production Time</div>
@@ -150,8 +147,6 @@
             </div>
           </div>
         </div>
-        </div>
-         
       </main>
     </div>
     <!-- End of content wrapper -->
